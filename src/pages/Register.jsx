@@ -56,7 +56,7 @@ const Register = () => {
     const url = "https://localhost:5000/api/register"
 
     try {
-      const response = await axios.post(url,data)
+      const response = await axios.post(url,data,{withCredentials:true})
       toast.success(response.data.message)
 
       if(response.data.success){
