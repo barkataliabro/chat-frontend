@@ -57,9 +57,9 @@ const Register = () => {
 
     try {
       const response = await axios.post(url,data,{withCredentials:true})
-      toast.success(response.data.message)
+      toast.success(response?.data?.message)
 
-      if(response.data.success){
+      if(response?.data?.success){
          setData({
           name: "",
           email: "",
@@ -69,7 +69,7 @@ const Register = () => {
          navigate('/email')
       }
     } catch (error) {
-       toast.error(error.response.data.message)
+       toast.error(error?.response?.data?.message)
     }
 
     console.log(data)
